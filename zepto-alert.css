@@ -1,0 +1,30 @@
+
+#zepto-alert {
+  display: block;
+  position: fixed;
+  max-width: 600px;
+  min-width: 250px;
+  border: 1px solid #eee;
+  background: white;
+  z-index: 1000;
+}
+
+#zepto-alert .zepto-alert-title {
+  padding: 10px;
+  text-align: center;
+}
+
+#zepto-alert .zepto-alert-message {
+  padding: 10px;
+}
+
+#zepto-alert .zepto-alert-action {
+  padding: 10px;
+  background: #EEE;
+  text-align: right;
+}
+
+#zepto-alert .zepto-alert-action button {
+  padding: 5px;
+  font-size: 1em;
+}

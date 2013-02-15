@@ -4,7 +4,13 @@
   "description": "Alert component based on zepto.",
   "version": "0.0.1",
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "component/underscore": "*",
+    "component/emitter": "*",
+    "component/inherit": "*",
+    "p-baleine/zepto": "*",
+    "p-baleine/zepto-overlay": "*"
+  },
   "development": {},
   "license": "MIT",
   "scripts": [

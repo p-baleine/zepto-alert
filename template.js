@@ -1,0 +1,1 @@
+module.exports = '<div id="zepto-alert">\n  <div class="zepto-alert-title"><%= title %></div>\n  <div class="zepto-alert-message"><%= message %></div>\n  <div class="zepto-alert-action">\n    <button class="zepto-alert-ok">OK</button>\n  </div>\n</div>\n';
