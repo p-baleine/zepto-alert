@@ -1,0 +1,17 @@
+{
+  "name": "zepto-alert",
+  "repo": "p-baline/zepto-alert",
+  "description": "Alert component based on zepto.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "styles": [
+    "zepto-alert.css"
+  ]
+}
