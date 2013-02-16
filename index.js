@@ -97,6 +97,7 @@ Alert.prototype.show = function() {
 Alert.prototype.hide = function() {
   this.emit("hide");
   this.$el.remove();
+  this.overlay.hide();
   return this;
 };
 

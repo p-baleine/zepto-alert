@@ -102,6 +102,14 @@ describe("zepto-alert", function() {
         expect($("#zepto-alert").closest('html')).to.empty();
       });
 
+      it("should remove overlay", function(done) {
+        this.timeout(3000);
+        setTimeout(function() {
+          expect($("#overlay").closest('html')).to.empty();
+          done();
+        }.bind(this), 2500);
+      });
+
       it("should emit `hide`", function() {
         expect(this.spy.called).to.be.ok();
       });
