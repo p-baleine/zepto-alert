@@ -28,6 +28,12 @@ describe("zepto-alert", function() {
     expect(alertObj).to.have.property("message", message);
   });
 
+  it("should proxy callback to Alert", function() {
+    var callback = function() {},
+        alertObj = alert("", "", callback);
+    expect(alertObj).to.have.property("cb", callback);
+  });
+
   describe("Alert", function() {
     beforeEach(function() {
       this.alert = new alert.Alert();
@@ -103,6 +109,8 @@ describe("zepto-alert", function() {
 
     describe("click OK", function() {
       beforeEach(function() {
+        this.spy = sinon.spy();
+        this.alert = new alert.Alert({ callback: this.spy });
         this.hideSpy = sinon.spy(this.alert, "hide");
         this.alert.show();
         click($("#zepto-alert .zepto-alert-ok"));
@@ -114,6 +122,10 @@ describe("zepto-alert", function() {
 
       it("should call hide", function() {
         expect(this.hideSpy.called).to.be.ok();
+      });
+
+      it("should call callback", function() {
+        expect(this.spy.called).to.be.ok();
       });
     });
   });

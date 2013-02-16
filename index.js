@@ -27,12 +27,13 @@ exports.Alert = Alert;
  * 
  * @param {String} title
  * @param {String} message
+ * @param {Function} callback
  * @return {Alert}
  * @api public
  */
 
-function alert(title, message) {
-  return new Alert({ title: title, message: message });
+function alert(title, message, callback) {
+  return new Alert({ title: title, message: message, callback: callback });
 }
 
 /**
@@ -48,6 +49,7 @@ var template = _.template(require("./template"));
  * 
  *   - `title` dialog title
  *   - `message` message
+ *   - `callback` callback on clicking ok
  * 
  * @param {Object} options
  * @api public
@@ -58,6 +60,7 @@ function Alert(opts) {
   _.bindAll(this, "onok");
   this.title = opts.title || "";
   this.message = opts.message || "";
+  this.cb = opts.callback || function() {};
   this.$el = $(template({ title: this.title, message: this.message }));
   this.overlay = overlay();
   this.$(".zepto-alert-ok").on("click", this.onok);
@@ -106,6 +109,7 @@ Alert.prototype.hide = function() {
 
 Alert.prototype.onok = function(e) {
   e.preventDefault();
+  this.cb();
   this.hide();
 };
 
