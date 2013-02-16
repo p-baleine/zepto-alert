@@ -60,7 +60,7 @@ function Alert(opts) {
   this.message = opts.message || "";
   this.$el = $(template({ title: this.title, message: this.message }));
   this.overlay = overlay();
-  this.$(".ok").on("click", this.onok);
+  this.$(".zepto-alert-ok").on("click", this.onok);
 }
 
 /**

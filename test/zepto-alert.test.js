@@ -105,7 +105,7 @@ describe("zepto-alert", function() {
       beforeEach(function() {
         this.hideSpy = sinon.spy(this.alert, "hide");
         this.alert.show();
-        click($("#zepto-alert .ok"));
+        click($("#zepto-alert .zepto-alert-ok"));
       });
 
       afterEach(function() {
