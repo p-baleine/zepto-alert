@@ -82,8 +82,8 @@ inherit(Alert, Emitter);
 Alert.prototype.show = function() {
   this.emit("show");
   this.overlay.show();
-  this.$el.offset(this.offset());
   this.$el.appendTo("body");
+  this.$el.offset(this.offset());
   return this;
 };
 
